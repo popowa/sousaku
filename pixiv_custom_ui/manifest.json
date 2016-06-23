@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+  "name": "Pixiv Custom UI extension",
+  "version": "0.0.0",
+  "description": "You can custom Pixiv UI",
+  "author": "@ayakomuro",
+  "icons": { "16": "icon16.png",
+             "48": "icon48.png",
+            "128": "icon128.png" },
+  "content_scripts": [{
+    "matches": ["http://*.pixiv.net/*"],
+    "js": ["jquery-3.0.0.min.js", "ui-changer.js"]
+  }]
+}
