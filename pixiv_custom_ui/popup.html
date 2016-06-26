@@ -1,16 +1,35 @@
 <!DOCTYPE html>
 <html>
-<head><title>UI Setting</title>
-</head>
-<body style="width: 400px; height: 250px;">
-<h1>UI設定</h1>
-<label>
-  <input type="checkbox" id="uiDisNotify">お知らせ非表示
-</label>
-
-<div id="status"></div>
-<button id="save">Save</button>
-<div id="test"></div>
-<script src="options.js"></script>
+    <head>
+        <title>UI Setting</title>
+        <style type="text/css">
+        <!--
+        body{width: 400px; height: 250px;
+            background-image:url("bkgd.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: right bottom;
+        }
+        btn-default {color: #333;background-color: #fff;border-color: #ccc; padding: 10px 16px; font-size: 18px;}
+        li {padding-bottom: 5px; list-style-type: none;}
+        #uiUserIdHidden {
+            width: 200px;
+        }
+        -->
+        </style>
+    </head>
+    <body>
+        <h1 class="h1">UI設定</h1>
+        <label>
+         <li>お知らせ(pinboard)
+            <li><input type="checkbox" id="uiNotifyOn">常時表示</li>
+            <li><input type="checkbox" id="uiNotifyOff">非表示</li></ul>
+        <li>作品を非表示にしたいユーザーID(複数の場合はカンマ","区切り)<br />
+        <input type="text" id="uiUserIdHidden">
+        </label>
+        <div id="status"></div>
+        <button id="save" class="btn-default">Save</button>
+        <script src="jquery-3.0.0.min.js"></script>
+        <script src="options.js"></script>
 </body>
 </html>
