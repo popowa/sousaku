@@ -5,6 +5,16 @@ $(document).ready(function(){
 $("#save").click(function () {
     save_options();
 });
+
+$(document).on('change','.uiSTC', function(){
+    if($(this).is(':checked')){
+        $('input:hidden[name=s_mode]').val('s_tc');
+    } else {
+        $('input:hidden[name=s_mode]').val('s_tag');
+    };
+});
+
+
 $("#clear").click(function(){
     chrome.storage.sync.clear();
     $('.options').find('input:text').val('');
@@ -82,5 +92,6 @@ function restore_options(){
             if(items.uiScoreOff == true){
                 $('.score').remove();
             };
+        $('.category-list>ul').append('<li><input type="checkbox" name="uiSTC" class="uiSTC" id="uiSTC" value="1">TC検索</li>');
     });
 };

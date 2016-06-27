@@ -2,6 +2,7 @@
   "manifest_version": 2,
   "name": "PeaSuke",
   "version": "1.0.0",
+  "short_name": "Peasuke",
   "description": "Be peaceful on drawing world",
   "author": "@ayakomuro",
   "icons": { "16": "icon16.png",
@@ -17,6 +18,5 @@
       "default_popup": "popup.html",
       "default_title": "UI Setting"
   },
-  "options_page": "popup.html",
   "permissions": ["storage"]
 }
