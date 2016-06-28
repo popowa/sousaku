@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
   "name": "PeaSuke",
-  "version": "1.1.0",
-  "short_name": "Peasuke",
-  "description": "Be peaceful on drawing world",
+  "version": "1.1.1",
+  "short_name": "Pixiv Custom UI",
+  "description": "Change Pixiv UI/Pixivの画面をカスタマイズ",
   "author": "@ayakomuro",
   "icons": { "16": "icon16.png",
              "48": "icon48.png",
