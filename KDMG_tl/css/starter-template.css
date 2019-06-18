@@ -1,0 +1,26 @@
+body {
+
+}
+
+.starter-template {
+  padding: 40px 15px;
+
+}
+
+.map {
+  padding-top: 50px;
+}
+
+.king1 {
+  position: absolute;
+	top: 600px;
+  left: 450px;
+}
+
+.king-pop{
+  padding: 10px;
+  display: block;
+  border: solid 4px gray;
+  background-color: white;
+  width: 300px;
+}
