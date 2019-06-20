@@ -1,0 +1,15 @@
+{
+  "name": "todos",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "parcel index4.html",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel build --public-url . index4.html"
+  },
+  "dependencies": {
+    "http-server": "^0.11.1"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3"
+  }
+}
