@@ -8,13 +8,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>非公式：屠竜の国まとめ（になる予定）</title>
+    <title>非公式：屠竜の国々をまとめてみたい）</title>
     <link rel="stylesheet" href="https://openlayers.org/en/v5.3.0/css/ol.css" type="text/css">
     <!-- Bootstrap core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="./css/starter-template.css" rel="stylesheet">
+
+
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -35,14 +37,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">非公式：屠竜の国まとめ（になる予定）</a>
+          <a class="navbar-brand" href="#">非公式：屠竜の国々をまとめてみたい</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
 
             <li class="active"><a href="#">地図</a></li>
-            <li><a href="https://twitter.com/po3515">作っている人</a></li>
-            <li><a href="https://twitter.com/KDMG_tl">企画</a></li>
+            <li><a href="https://twitter.com/po3515">🐦</a></li>
+            <li><a href="https://twitter.com/KDMG_tl">屠竜の王と門の神子</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -51,20 +53,33 @@
     <div class="container">
 
           <div id="map" class="map"></div>
-          <script src="./js/index.js"></script>
-      </div>
-      <div class="row col-md-6">
+          <div style="display: none;">
+            <!-- Clickable label for Vienna -->
+            <a class="overlay" id="king1" target="_blank" href="https://twitter.com/josm_josm/status/1130004903877681152/">アシェタ＝アーカーシャ</a>
+            <div id="marker" title="Marker"></div>
+            <!-- Popup -->
+            <div id="popup" title="">
+
+            </div>
+          </div>
+          <script src="./js/overlay.js"></script>
       <h2>タスク</h2>
       <ul >
-        <li>複数表示が出来る用にする</li>
-        <li>画像の拡大・縮小が出来る用にする</li>
-        <li>登録情報を自動で取得出来る用にする</li>
+        <li><s>画像の拡大・縮小が出来る用にする</s></li>
+        <li> 複数Overlay出来る仕組みを調べる（GeoJSON辺りで実装するか変数を上手くごにょごにょしたい
+        <li>登録情報を自動で取得出来る用にする(Google formなどで)</li>
         <li>load()を別の仕組みに出来ないか考える</li>
+              <li>これも試してみる：Custom Overview Map https://openlayers.org/en/latest/examples/overviewmap-custom.html
+                <li>ヒマがあれば：Custom Animation https://openlayers.org/en/latest/examples/feature-animation.html
       </ul>
+      <h3>参考URL</h3>
       <ul>
-        <li>OpenLayer https://openlayers.org/en/latest/doc/quickstart.html
-          <li> Static image https://openlayers.org/en/latest/examples/static-image.html
-          <li> GeoJSON https://openlayersbook.github.io/ch06-styling-vector-layers/example-03.html
+        <li>Boostrap <a href="https://getbootstrap.com">https://getbootstrap.com</a>
+        <li>OpenLayer <a href="https://openlayers.org/en/latest/doc/quickstart.html">https://openlayers.org/en/latest/doc/quickstart.html</a>
+          <li> Static image <a href="https://openlayers.org/en/latest/examples/static-image.html">https://openlayers.org/en/latest/examples/static-image.html</a>
+          <li> GeoJSON <a href="https://openlayersbook.github.io/ch06-styling-vector-layers/example-03.html">https://openlayersbook.github.io/ch06-styling-vector-layers/example-03.html</a>
+            <li>Overlay <a href="https://openlayers.org/en/latest/examples/overlay.html">https://openlayers.org/en/latest/examples/overlay.html</a>
+
       </ul>
       </div>
     </div><!-- /.container -->
@@ -72,9 +87,9 @@
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://sousaku.s3-ap-northeast-1.amazonaws.com/KDMG_tl/js/jquery-3.4.1.min.js"></script>
-    <script src="https://sousaku.s3-ap-northeast-1.amazonaws.com/KDMG_tl/js/bootstrap.min.js"></script>
 
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   </body>
 </html>

@@ -4,7 +4,7 @@
   "scripts": {
     "start": "parcel index4.html",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "parcel build --public-url . index4.html"
+    "build": "parcel build --public-url ./ -d dist index4.html"
   },
   "dependencies": {
     "http-server": "^0.11.1"

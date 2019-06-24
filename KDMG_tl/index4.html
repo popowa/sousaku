@@ -15,6 +15,7 @@
 
     <!-- Custom styles for this template -->
     <link href="./css/starter-template.css" rel="stylesheet">
+    <script src="http://dev.openlayers.org/OpenLayers.js"></script>
 
 
 
@@ -52,7 +53,7 @@
 
     <div class="container">
 
-          <div id="map" class="map"></div>
+          <div id="map" class="smallmap olMap map"></div>
           <div style="display: none;">
             <!-- Clickable label for Vienna -->
             <a class="overlay" id="king1" target="_blank" href="https://twitter.com/josm_josm/status/1130004903877681152/">アシェタ＝アーカーシャ</a>
@@ -69,6 +70,8 @@
         <li> 複数Overlay出来る仕組みを調べる（GeoJSON辺りで実装するか変数を上手くごにょごにょしたい
         <li>登録情報を自動で取得出来る用にする(Google formなどで)</li>
         <li>load()を別の仕組みに出来ないか考える</li>
+              <li>これも試してみる：Custom Overview Map https://openlayers.org/en/latest/examples/overviewmap-custom.html
+                <li>ヒマがあれば：Custom Animation https://openlayers.org/en/latest/examples/feature-animation.html
       </ul>
       <h3>参考URL</h3>
       <ul>
@@ -77,6 +80,7 @@
           <li> Static image <a href="https://openlayers.org/en/latest/examples/static-image.html">https://openlayers.org/en/latest/examples/static-image.html</a>
           <li> GeoJSON <a href="https://openlayersbook.github.io/ch06-styling-vector-layers/example-03.html">https://openlayersbook.github.io/ch06-styling-vector-layers/example-03.html</a>
             <li>Overlay <a href="https://openlayers.org/en/latest/examples/overlay.html">https://openlayers.org/en/latest/examples/overlay.html</a>
+
       </ul>
       </div>
     </div><!-- /.container -->
@@ -84,8 +88,7 @@
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
-    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
+
     <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
