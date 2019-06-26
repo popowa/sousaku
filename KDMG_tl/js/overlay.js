@@ -1,12 +1,9 @@
-// https://openlayers.org/en/latest/examples/icon.html?q=Marker 次をこれ見る
-
 import Map from 'ol/Map.js';
 import View from 'ol/View.js';
 import {getCenter} from 'ol/extent.js';
 import ImageLayer from 'ol/layer/Image.js';
 import Projection from 'ol/proj/Projection.js';
 import Static from 'ol/source/ImageStatic.js';
-
 
 // icon
 import Feature from 'ol/Feature.js';
@@ -22,10 +19,8 @@ import {Icon, Style} from 'ol/style.js';
 /* Twitter データ */
 //https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/overview.html
 //https://publish.twitter.com/oembed?url=https://twitter.com/nekodume_xxx/status/1139172395795722241
-
 var fs = require('fs');
 var twitter = JSON.parse(fs.readFileSync('./twitter.json', 'utf8'));
-
 
 /* Projectを作成 */
 
@@ -44,13 +39,11 @@ var iconStyle = new Style({
     anchorXUnits: 'fraction',
     anchorYUnits: 'pixels',
     src: 'https://openlayers.org/en/latest/examples/data/icon.png'
+    //src: './img/icon.png'
   }))
 });
 
 /*アイコンの情報*/
-//https://openlayers.org/en/latest/apidoc/module-ol_Feature-Feature.html
-//https://openlayers.org/en/latest/examples/icon.html?q=Marker
-
 
 var icons = [];
 var iconFeature = [];
