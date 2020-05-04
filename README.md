@@ -19,3 +19,7 @@ Status: OSSなOCRには限界があるかもしれないがまだ諦めては居
 ## kurosame
 
 Bアパの黒鮫FAオリジナルファイル
+
+## CliffordTwinBrothers
+
+クリフォード双子兄弟のオリジナルファイル
