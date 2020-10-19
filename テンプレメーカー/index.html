@@ -1,0 +1,227 @@
+
+      <!doctype html>
+<html lang="ja">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./static/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>テンプレメーカー</title>
+    <style>
+      #myCanvas {
+        margin: 10px;
+        border: 1px solid;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+    <div class="collapse bg-dark" id="navbarHeader">
+      <div class="container d-flex justify-content-between">
+        <div class="row">
+          <div class="col-sm-8 col-md-7">
+            <h4 class="text-white">テンプレメーカー</h4>
+            <p class="text-muted">創作向けテンプレートをウェブで簡単に作りダウンロードする事が出来ます。</p>
+            <p class="text-muted"><a href="https://github.com/popowa">Github</a></p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+      <div class="container d-flex justify-content-between">
+        <a href="/index.html" class="navbar-brand d-flex align-items-center ">
+          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-card-checklist" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M14.5 3h-13a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+            <path fill-rule="evenodd" d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/>
+          </svg>
+          <strong> テンプレメーカー</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main role="main">
+<form>
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <h4>設定</h4>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>種別</th>
+              <th>値</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                <td>テンプレタイプ</td><td>十字</td>
+              </tr>
+              <tr>
+                <td>サイズ</td><td>800 x 800px</td>
+              </tr>
+              <tr>
+                <td>文字の大きさ</td><td><select id="font_size"></select></td>
+              </tr>
+              <tr>
+                <td>
+                   <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-up-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                    <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"/>
+                  </svg>上</td>
+                  <td>
+                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" id="axis-up">
+                  </td>
+              </tr>
+              <tr>
+                <td>
+                  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-down-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                    <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"/>
+                  </svg>下
+                </td>
+                <td><input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" id="axis-down"></td>
+              </tr>
+              <tr>
+                <td>
+                  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5A.5.5 0 0 0 4 8z"/>
+                  </svg>右
+                </td>
+                <td><input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" id="axis-right"></td>
+              </tr>
+              <tr>
+                <td>
+                  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                      <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+                    </svg>左
+                </td>
+                <td><input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" id="axis-left"></td>
+              </tr>
+              <tr>
+                <td>created by</td>
+                <td><input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" id="text-owner"></td>
+              </tr>
+              <tr>
+                <td>タイトル
+                </td>
+                <td><input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" id="text-title">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+        <button class="btn btn-outline-secondary" type="button" id="createImage">画像生成</button>
+
+        <a download="Canvas.png" href="#" id="downloadImage" class="btn btn-outline-secondary">Download Canvas</a>
+    </form>
+
+  </div>
+  <div class="col-8">
+    <canvas id="myCanvas"></canvas>
+    <p>※サンプルとして表示されます</p>
+    <p>今後の予定</p>
+    <ul>
+      <li>サイズの自動生成</li>
+      <li>テーブル型のテンプレート作成</li>
+    </ul>
+
+  </div>
+      <script>
+      var canvas_width = 600;
+      var canvas_height = 600;
+      var font_size = 10;
+      var title_size = 30;
+      var image_margin = 10;
+      for(i=10; i < 30; i++){
+        $('#font_size').append($('<option>').val(i).text(i));
+      }
+      var canvas = document.getElementById("myCanvas");
+      canvas.width = canvas_width;
+      canvas.height = canvas_height;
+       var ctx = canvas.getContext("2d");
+       $( "#createImage" ).click(function() {
+         ctx.clearRect(0, 0, canvas.width, canvas.height);
+         var font_size = $( "#font_size" ).val();
+         ctx.fillStyle = "rgb(255, 255, 255)";
+         ctx.fillRect(0,0,canvas_width,canvas_height);
+         ctx.strokeRect(image_margin, title_size*2, canvas_width - image_margin *2, canvas_height - image_margin - title_size *2);
+         ctx.fillStyle = "rgb(0, 0, 0)";
+         //horizontal line
+         ctx.moveTo(image_margin, (canvas_height - image_margin)/2);
+         ctx.lineTo(canvas_width - image_margin, (canvas_height-image_margin)/2) ;
+         ctx.stroke();
+         //vertical line
+         ctx.moveTo((canvas_width-(image_margin*2))/2, title_size*2);
+         ctx.lineTo((canvas_width-image_margin*2)/2, canvas_height -image_margin );
+         ctx.stroke();
+
+         ctx.font = font_size + "px Arial";
+         ctx.fillText($( "#axis-up" ).val(), canvas_width/2, title_size *3);
+         ctx.fillText($( "#axis-down" ).val(), canvas_width/2, canvas_height- font_size * 2);
+         ctx.fillText($( "#axis-right" ).val(), canvas_width - ($("#axis-right" ).val().length*font_size) - title_size, (canvas_height- title_size - font_size)/2);
+         ctx.fillText($( "#axis-left" ).val(), title_size, (canvas_height- title_size - font_size)/2);
+         ctx.font = title_size + "px Arial";
+         ctx.fillText($( "#text-title" ).val(),title_size, title_size*2 - image_margin);
+         ctx.font = font_size + "px Arial";
+         ctx.fillText('created by '+$( "#text-owner" ).val(), canvas_width/2 + title_size , title_size *2 - image_margin);
+
+
+      });
+
+       $( "#downloadImage" ).click(function() {
+         var canvas = document.getElementById("myCanvas");
+         if (canvas.getContext) {
+            var a = document.createElement('a');
+            a.href = canvas.toDataURL('image/jpeg', 0.85);
+            a.download = 'download.jpg';
+            a.click();
+         }
+       });
+      </script>
+
+    </div>
+
+    <div>
+      <h5>
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+          <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"/>
+          <circle cx="8" cy="4.5" r="1"/>
+        </svg>                  免責</h5>
+      <p>本コンテンツを利用して起こった不利益に関しては作者は補償しません。自己責任にてご利用下さい。created by <a href="https://twitter.com/po3515" target="_blank">@po3515</a></p>
+
+    </div>
+  </main>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167974216-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-167974216-2');
+    </script>
+
+
+  </body>
+</html>
