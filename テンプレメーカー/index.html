@@ -139,11 +139,11 @@
 
   </div>
       <script>
-      var canvas_width = 600;
-      var canvas_height = 600;
+      var canvas_width = 800;
+      var canvas_height = 800;
       var font_size = 10;
       var title_size = 30;
-      var image_margin = 10;
+      var image_margin = 20;
       for(i=10; i < 30; i++){
         $('#font_size').append($('<option>').val(i).text(i));
       }
@@ -175,7 +175,7 @@
          ctx.font = title_size + "px Arial";
          ctx.fillText($( "#text-title" ).val(),title_size, title_size*2 - image_margin);
          ctx.font = font_size + "px Arial";
-         ctx.fillText('created by '+$( "#text-owner" ).val(), canvas_width/2 + title_size , title_size *2 - image_margin);
+         ctx.fillText('created by '+$( "#text-owner" ).val(), canvas_width - $( "#text-owner" ).val().length * font_size - image_margin * 2  , canvas_height - font_size);
 
 
       });
